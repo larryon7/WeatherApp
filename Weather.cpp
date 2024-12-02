@@ -67,7 +67,7 @@ bool Weather::GetWeatherFromNatWeatherService() {
 bool Weather::ParseXml() {
 
 	//load string into XML DOM
-	pugi::xml_parse_result result = xmldoc_.load(body_.c_str());
+	pugi::xml_parse_result result = xmldoc_.load_string(body_.c_str());
 
 	//check if there are errors
 	if (result) {
@@ -166,7 +166,8 @@ bool Weather::PrintCurrentWeather() {
 		<< "Wind Speed: " << weather_data_.wind_speed << std::endl
 		<< "Min Temperature: " << weather_data_.min_temperature << std::endl
 		<< "Max Temperature: " << weather_data_.max_temperature << std::endl << std::endl;
-}
+ return true;
+} 
 
 void Weather::RunThread() {
 

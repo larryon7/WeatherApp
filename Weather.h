@@ -84,6 +84,7 @@ public:
 	
 	bool Start() {
 		thread_ = std::thread(&Weather::RunThread, this);
+        return true;
 	}
 };
 
